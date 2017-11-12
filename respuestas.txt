@@ -1,0 +1,64 @@
+
+				Sergio Martínez Agüero
+
+
+NumZero
+  1. El fallo en Numzero se encuentra en el bucle que recorre el array inArr que
+     empieza a mirar a partir del indice 1 en vez de en el 0. Se podría
+     solucionar comenzando a inspeccionar en la posición número 0.
+  2. Introducir a la entrada del programa un array vacío.
+  3. No veo caso posible, para que el error se ejecute en este caso debe
+     ejecutarse el código.
+  4. Cualquier caso en el que no pongas un 0 como primer elemento provocará el
+     error y el fault pero no el failure
+  5. El primero de los estados erróneos es cuando el bucle de numZero intenta
+     recorrer el array, en este caso intenta recorrerlo pero la variable i
+     vale 1 al principio y no 0, por tanto se salta el primer elemento y hace
+     que count no se incremente si hay un 0 en esa posición.
+  6. Done
+LastZero
+  1. El fallo de LastZero se encuentra en que devuelve la posición del primer
+     zero encontrado, exactamente se encuentra en return i; si guardasemos la
+     posición donde encontramos el 0 y devolviésemos el valor solo cuando
+     acabásemos de recorrer el bucle se solucionaría.
+  2. Introducir a la entrada cualquier array que no contenga un 0.
+  3. No veo caso posible, para que el error se ejecute en este caso debe
+     ejecutarse el código.
+  4. Cualquier caso en el que no haya múltiples zeros provoca el error y el
+     fault pero no el failure.
+  5. El primero de los casos erróneos ocurre cuando se encuentra el primer 0,
+     en la posición 0 ya que devuelve i (que vale 0, la posición).
+  6. Done
+CountPositive
+  1. El fallo se encuentra en if (x[i] >= 0) ya que cuenta los zeros como
+     positivos y esto no debería ser así, la solución podría ser poner
+     un mayor en vez de mayor o igual.
+  2. La única manera de no ejecutar el fault es introducir un array vacío.
+  3. No veo caso posible, para que el error se ejecute en este caso debe
+     ejecutarse el código.
+  4. No veo caso posible.
+  5.
+  6. Done
+OddOrPos
+  1. El fallo está en que el programa no tiene en cuenta los impares negativos,
+     se encuentra en          if (x[i]%2 == 1 || x[i] > 0)
+     La posible solución sería:
+                              if (x[i]%2 == 1 || x[i] > 0 || x[i]%2 == -1)
+  2. Introducir a la entrada del programa un array vacío.
+  3. Aquellos ejemplos en los que no hay impares negativos.
+  4. No veo caso posible.
+  5.
+  6. Done
+FindLast
+  1. El fallo se produce cuando el elemento que buscamos está en la primera
+     posición (y no se ha encontrado antes), ya que el programa no llega a
+     comprobar esta primera posición, el fallo se encuentra en:
+                  for (int i=x.length-1; i > 0; i--)
+     Una posible solución sería poner un mayor o igual en el 0.
+  2. Cualquier ejemplo en el que el elemento que buscamos está en la primera
+     posición y no se ha encontrado antes, como por ejemplo {0 1 2} ó {2 0 1 2}
+     cuando buscamos el 2.
+  3. Cualquier ejemplo que no llegue a comprobar la primera posición.
+  4. No veo caso posible.
+  5.
+  6. Done
